@@ -22,7 +22,7 @@ def bevelGears = ScriptingEngine.gitScriptRun(
             [	  34,// Number of teeth gear a
 	            24,// Number of teeth gear b
 	            6,// thickness of gear A
-	            computeGearPitch(26.15,24),// gear pitch in arc length mm
+	            computeGearPitch(26.15,30),// gear pitch in arc length mm
 	           60,// shaft angle, can be from 0 to 100 degrees
 	            0// helical angle, only used for 0 degree bevels
             ]
@@ -64,6 +64,7 @@ CSG polygon = Extrude.points(new Vector3d(0, 0, size),// This is the  extrusion 
 		        ).movey(-100);
 CSG block = new Cube(40).toCSG().toZMin()
 		        .difference(bevelGears.get(0))
+		        .movey(100)
 		        //.difference(bevelGears.get(1))
 		        
-return [block,text,polygon,CSG.unionAll([boarderParts,outsideParts]),s.extrudeLayerToCSG(2,"4-star")]
+return [block,bevelGears.get(0),text,polygon,CSG.unionAll([boarderParts,outsideParts]),s.extrudeLayerToCSG(2,"4-star")]
