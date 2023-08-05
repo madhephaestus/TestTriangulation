@@ -4,9 +4,12 @@ import java.nio.file.Paths;
 import org.junit.Test;
 
 import eu.mihosoft.vrl.v3d.CSG
+import eu.mihosoft.vrl.v3d.Cube
 import eu.mihosoft.vrl.v3d.FileUtil
 import eu.mihosoft.vrl.v3d.Text3d
 import eu.mihosoft.vrl.v3d.TextExtrude
+import eu.mihosoft.vrl.v3d.Vector3d
+import eu.mihosoft.vrl.v3d.svg.SVGLoad
 import javafx.scene.text.Font;
 import eu.mihosoft.vrl.v3d.CSG
 import eu.mihosoft.vrl.v3d.Extrude;
